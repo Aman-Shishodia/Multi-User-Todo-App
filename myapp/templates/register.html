@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        nav{
+            width: 100%;
+            height: 8vh;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 1px 1px 1px 1px grey;
+        }
+        nav button{
+            border: none;
+            padding: 8px 12px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .container{
+            /* border: 2px solid red; */
+            width: 30vw;
+            margin: auto;
+            margin-top: 50px;
+        }
+        .container h1{
+            text-align: center;
+        }
+        .container input{
+            width: 100%;
+            height: 6vh;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>TODO</h1>
+        <div class="buttons">
+
+            <a href="/"><button>Login</button></a>
+            <a href="/register/"><button>Signup</button></a>
+        </div>
+    </nav>
+    <div class="container">
+
+        <h1>Register Page</h1>
+        <br>
+        <hr>
+        <br>
+        <form action="/register/" method="post">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" value="Create">
+        </form>
+    </div>
+</body>
+</html>
